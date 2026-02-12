@@ -1,4 +1,4 @@
-# Travaux Pratiques : Installation d'une Machine Virtuelle Linux sur VirtualBox
+# Travaux Pratiques 1 : Installation d'une Machine Virtuelle Linux sur VirtualBox
 
 ## Objectifs
 
