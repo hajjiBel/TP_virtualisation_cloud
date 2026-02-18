@@ -1,4 +1,4 @@
-# Travaux Pratiques 2 : Virtualisation Complète - Gestion Avancée
+# Travaux Pratiques 2 : Virtualisation - Gestion Avancée
 
 ## Objectifs
 
