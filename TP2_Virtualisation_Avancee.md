@@ -173,24 +173,6 @@ ping 8.8.8.8
 ping 192.168.56.1  # Adresse par défaut du host-only
 ```
 
-### 1.4 Configuration avancée du réseau dans VMware
-
-Pour VMware Workstation/Fusion, les concepts sont similaires :
-
-**Fichier de configuration réseau :**
-```
-Sur Linux/Mac : /etc/vmware/networking
-Sur Windows : C:\ProgramData\VMware\hostd\config
-```
-
-**Mode Virtual Switch :**
-```bash
-# Lister les switchs virtuels
-vmware-cmd -l
-
-# Créer un switch virtuel
-vmware-vswitch
-```
 
 ## Partie 2 : Gestion du matériel
 
@@ -329,11 +311,7 @@ sudo fdisk /dev/sda
 # Utiliser le même début, mais un end différent (plus grand)
 # w : écrire
 
-# Redimensionner le système de fichiers
-sudo resize2fs /dev/sda1
 
-# Vérifier
-df -h
 ```
 
 ### 2.5 Supprimer un disque de la VM
@@ -355,7 +333,7 @@ df -h
 **VirtualBox :**
 
 **Étapes :**
-1. Clic droit sur la VM → Export Appliance
+1. Fichier → Exporter une appliance (OVF/OVA)
 2. Format : Sélectionnez "Open Virtualization Format 2.0" (OVF)
 3. Fichier de destination : Choisissez un emplacement (ex : ~/exported_vms/)
 4. Nom du fichier : `Ubuntu-Server-Export.ova`
@@ -398,7 +376,7 @@ ls -lh ~/exported_vms/Ubuntu-Server-Export.ova
 1. Arrêtez la VM source
 2. Clic droit sur la VM → Clone
 3. Configurez :
-   - Nouveau nom : `Ubuntu-Server-Clone`
+   - Nouveau nom : `Ubuntu-Clone`
    - Type de clone : "Full Clone" (copie complète)
    - Cochez "Reinitialize the MAC address of all network cards"
 4. Cliquez Clone
@@ -687,7 +665,7 @@ renice -20 -p <PID>  # Augmenter la priorité
 
 **Étapes :**
 1. Créez 3 clones de votre VM (VM1, VM2, VM3)
-2. VM1 : NAT + Host-only
+2. VM1 : NAT + Réseau interne
 3. VM2 : Réseau interne uniquement
 4. VM3 : Réseau interne uniquement
 5. Configurez le routage sur VM1 pour partager Internet à VM2/VM3
